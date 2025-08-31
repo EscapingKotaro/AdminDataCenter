@@ -25,4 +25,5 @@ urlpatterns = [
    # path('api/', include('servers.urls')),
    # path('api/', include('users.urls')),
     path('api-auth/', include('rest_framework.urls')),
+    path('api/reports/', include('reports.urls')),
 ]
