@@ -176,3 +176,17 @@ CHANNEL_LAYERS = {
 }
 
 AUTH_USER_MODEL = 'authentication.CustomUser'
+
+
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Важная строка!
+
+# Дополнительные папки со статикой (если есть)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
