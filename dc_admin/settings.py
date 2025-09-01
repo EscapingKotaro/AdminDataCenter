@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'users',
     'rest_framework_simplejwt',
     'authentication',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +81,17 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
+}
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        }
+    },
+    'USE_SESSION_AUTH': False,
 }
 
 REST_FRAMEWORK = {
