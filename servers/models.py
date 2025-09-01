@@ -1,3 +1,9 @@
+from django.db import models
+from django.contrib.auth.models import User
+from django.conf import settings
+
+
+
 class Server(models.Model):
     STATUS_CHOICES = [
         ('online', 'Онлайн'),
@@ -25,6 +31,16 @@ class Server(models.Model):
     
     def __str__(self):
         return f"{self.name} ({self.ip_address})"
+    
+    def get_current_metrics(self):
+        # Метод для получения текущих метрик (можно расширить)
+        return {
+            'cpu_usage': 0,
+            'memory_usage': 0,
+            'network_in': 0,
+            'network_out': 0,
+            'temperature': 0
+        }
 
 class ServerAction(models.Model):
     ACTION_CHOICES = [
