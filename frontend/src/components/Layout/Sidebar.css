@@ -1,0 +1,143 @@
+.sidebar {
+  width: 250px;
+  background: #1f2937;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 60px;
+  z-index: 900;
+}
+
+.sidebar-menu {
+  padding: 20px 0;
+  flex: 1;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #d1d5db;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.menu-item:hover {
+  background: #374151;
+  color: white;
+  border-left-color: #3b82f6;
+}
+
+.menu-item.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-left-color: #fff;
+}
+
+.menu-item.active .menu-icon {
+  transform: scale(1.1);
+}
+
+.menu-icon {
+  font-size: 1.2rem;
+  margin-right: 12px;
+  width: 24px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.menu-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid #374151;
+  background: #111827;
+}
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  color: #9ca3af;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.online {
+  background: #10b981;
+}
+
+.status-indicator.offline {
+  background: #ef4444;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.sidebar-version {
+  font-size: 0.7rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+    top: 50px;
+  }
+  
+  .menu-label {
+    display: none;
+  }
+  
+  .menu-icon {
+    margin-right: 0;
+    font-size: 1.4rem;
+  }
+  
+  .menu-item {
+    justify-content: center;
+    padding: 15px 0;
+  }
+  
+  .sidebar-footer {
+    padding: 10px;
+  }
+  
+  .system-status span {
+    display: none;
+  }
+  
+  .sidebar-version {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 50px;
+  }
+  
+  .menu-icon {
+    font-size: 1.2rem;
+  }
+}

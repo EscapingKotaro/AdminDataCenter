@@ -1,0 +1,152 @@
+.monitoring-page {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 20px;
+}
+
+.monitoring-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.monitoring-loading p {
+  color: #6b7280;
+  font-size: 1.2rem;
+}
+
+.monitoring-header {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.monitoring-header h1 {
+  margin: 0 0 10px 0;
+  color: #1f2937;
+  font-size: 2.2rem;
+}
+
+.monitoring-header p {
+  margin: 0 0 25px 0;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.monitoring-controls {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.server-selector,
+.time-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.server-selector label,
+.time-selector label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.server-selector select,
+.time-selector select {
+  padding: 10px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  font-size: 1rem;
+  min-width: 250px;
+}
+
+.server-selector select:focus,
+.time-selector select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.monitoring-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  grid-template-areas:
+    "metrics visitors"
+    "network health";
+}
+
+.metrics-section {
+  grid-area: metrics;
+}
+
+.visitors-section {
+  grid-area: visitors;
+}
+
+.network-section {
+  grid-area: network;
+}
+
+.health-section {
+  grid-area: health;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .monitoring-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "metrics"
+      "visitors"
+      "network"
+      "health";
+  }
+}
+
+@media (max-width: 768px) {
+  .monitoring-page {
+    padding: 10px;
+  }
+  
+  .monitoring-header {
+    padding: 20px;
+  }
+  
+  .monitoring-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .monitoring-controls {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .server-selector select,
+  .time-selector select {
+    min-width: 100%;
+  }
+}

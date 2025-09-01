@@ -1,0 +1,103 @@
+.server-metrics {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.server-metrics h3 {
+  margin: 0 0 20px 0;
+  color: #1f2937;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 10px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.metric-card {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+}
+
+.metric-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.metric-icon {
+  font-size: 1.5rem;
+}
+
+.metric-title {
+  font-weight: 600;
+  color: #374151;
+}
+
+.metric-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.metric-chart {
+  display: flex;
+  align-items: end;
+  gap: 2px;
+  height: 60px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.chart-bar {
+  flex: 1;
+  background: #10b981;
+  border-radius: 2px 2px 0 0;
+  min-height: 1px;
+  transition: height 0.3s ease;
+}
+
+.metrics-table {
+  margin-top: 20px;
+}
+
+.metrics-table h4 {
+  margin: 0 0 15px 0;
+  color: #374151;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #374151;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}

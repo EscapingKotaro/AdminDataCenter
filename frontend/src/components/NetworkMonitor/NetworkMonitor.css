@@ -1,0 +1,95 @@
+.network-monitor {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.network-monitor h3 {
+  margin: 0 0 20px 0;
+  color: #1f2937;
+}
+
+.network-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.network-stat {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  border-left: 4px solid #3b82f6;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 5px;
+}
+
+.stat-trend {
+  font-size: 1.2rem;
+}
+
+.network-chart {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.chart-title {
+  text-align: center;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+  height: 150px;
+  padding: 10px;
+}
+
+.chart-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.traffic-in {
+  width: 60%;
+  background: #10b981;
+  border-radius: 2px 2px 0 0;
+  margin-bottom: 2px;
+}
+
+.traffic-out {
+  width: 60%;
+  background: #3b82f6;
+  border-radius: 2px 2px 0 0;
+}
+
+.time-label {
+  font-size: 0.7rem;
+  color: #6b7280;
+  margin-top: 5px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
