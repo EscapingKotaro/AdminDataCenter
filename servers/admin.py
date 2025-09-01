@@ -4,7 +4,7 @@ from .models import Server, ServerAction
 
 @admin.register(Server)
 class ServerAdmin(admin.ModelAdmin):
-    list_display = ('name', 'ip_address', 'cpu_cores', 'ram', 'storage', 'status_badge', 'hourly_rate', 'is_active')
+    list_display = ('name', 'ip_address', 'status', 'cpu_cores', 'ram', 'storage', 'status_badge', 'hourly_rate', 'is_active')
     list_filter = ('status', 'is_active', 'cpu_cores', 'ram')
     search_fields = ('name', 'ip_address', 'gpu_model')
     list_editable = ('status', 'is_active', 'hourly_rate')
@@ -112,7 +112,3 @@ class ServerActionAdmin(admin.ModelAdmin):
             obj.get_status_display()
         )
     status_badge.short_description = 'Статус'
-
-# Убираем старую регистрацию и добавляем кастомную
-# admin.site.register(Server, ServerAdmin)
-# admin.site.register(ServerAction, ServerActionAdmin)
