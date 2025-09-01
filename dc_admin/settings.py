@@ -175,9 +175,6 @@ CHANNEL_LAYERS = {
     },
 }
 
-AUTH_USER_MODEL = 'authentication.CustomUser'
-
-
 import os
 from pathlib import Path
 
@@ -190,3 +187,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Важная строка
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = False 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
